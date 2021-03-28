@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Number to Roman Numeral Converter</title>
+
+    <link href="css/maincss.css" rel="stylesheet" type="text/css">
+    <link>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+         }
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            min-height: 300px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+
+    </style>
+
+</head>
+
+
+<header>
+    <div align="center">
+        <h1>Roman Numeral Conversion Result</h1>
+    </div>
+</header>
+
+<body>
+
+<div class="row">
+
+    <div class="column">
+
+        <fieldset style="min-height:225px">
+
+            <legend>Conversion Result</legend>
+
+            <form method="post" object="${romannumeral}" modelattribute="${romannumeral}">
+
+                <br>
+
+                <table>
+
+                    <tr>
+
+                        <td><label for="numeric">Numeric Value: </label></td>
+                        <td class="td" id="numeric" style="width: 150px; text-align: center;"
+                            th:text="${romannumeral.numeric}"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><label for="numeral">Roman Numeral: </label></td>
+                        <td class="td" id="numeral" style="width: 150px; text-align: center;"
+                            th:text="${romannumeral.numeral}"></td>
+
+                    </tr>
+
+                </table>
+
+            </form>
+
+        </fieldset>
+
+    </div>
+
+    <div class="column">
+
+        <fieldset style="min-height:225px">
+
+            <legend>Roman Numeral Values</legend>
+
+            <ul>
+                <li>I = 1</li>
+                <li>V = 5</li>
+                <li>X = 10</li>
+                <li>L = 50</li>
+                <li>C = 100</li>
+                <li>D = 500</li>
+                <li>M = 1000</li>
+            </ul>
+
+        </fieldset>
+
+    </div>
+
+</div>
+
+
+<div align="center">
+    <form>
+        <td><a class="button" th:href="@{__${T(com.markg1704.model.RouteMap).HOME}__}">Do another</a></td>
+    </form>
+</div>
+
+
+</body>
+
+<footer>
+    <div align="right">
+        <h5 class="footer-text">Ver1.0 2021</h5>
+    </div>
+</footer>
+
+</html>
